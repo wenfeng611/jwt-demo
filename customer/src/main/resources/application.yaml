@@ -1,0 +1,34 @@
+server:
+  port: 8080
+  use-forward-headers: true
+  tomcat:
+    protocol-header-https-value: https
+    remote_ip_header: x-forwarded-for
+    protocol_header: x-forwarded-proto
+    port-header: X-Forwarded-Port
+
+spring:
+  messages:
+    basename: i18n/messages
+    fallback-to-system-locale: true
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    type: com.zaxxer.hikari.HikariDataSource
+
+  jackson:
+    date-format: 'yyyy-MM-dd HH:mm:ss'
+    time-zone: 'Asia/Shanghai'
+
+
+skytech:
+  security:
+    authentication:
+       jwt:
+          secret: f9a822e5541afe1bdcdb938885046aa01fd2d256
+          # Token is valid 24 hours
+          token-validity-in-seconds: 86400
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

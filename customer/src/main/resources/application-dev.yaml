@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: customer-pay
+  jpa:
+    show-sql: false
+  datasource:
+    url: jdbc:mysql://10.10.10.70:3306/tky_v2.0?useUnicode=true&characterEncoding=UTF-8
+    username: root
+    password: 123456
+    hikari:
+      maximum-pool-size: 10
+
+jwt:
+  secret: f9a822e5541afe1bdcdb938885046aa01fd2d256
